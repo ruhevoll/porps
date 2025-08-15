@@ -94,6 +94,7 @@ class Portfolio:
             raise ValueError(result.message)
 
     def generate_portfolios(self, num_portfolios = 1000):
+        n = len(self.mean_returns)
         np.random.dirichlet(np.ones(n), num_portfolios)
         return 0;
         
