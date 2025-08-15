@@ -95,6 +95,7 @@ class Portfolio:
             
     # Check if optimization succeeded 
         if result.success:
+            print("Optimized Weights:", result.x)
             return {'optimized weights' : result.x, 'portfolio metrics' : self.portfolio_metrics(result.x, store = True)}
         else:
             raise ValueError(result.message)
