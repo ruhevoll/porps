@@ -8,8 +8,7 @@
 This code uses 152 days of market data from Apple, Starbucks, and Microsoft to compute the optimal portfolio weights for a portfolio including these 3 companies. 
 Portfolio optimization may be done in two ways: By default, it will find the portfolio with the maximum Sharpe ratio. However, the user can also specify a desired return and the program will compute the portfolio yielding that return with minimum volatility.
 
-Moreover, this program includes a model trained on the first 80% of the market data to predict the volatility in the remaining 20%, judging by the pictures above, it's uhhh
-<img width="320" height="180" alt="image" src="[https://github.com/user-attachments/assets/95a99645-3939-463e-8726-9dab1934f37e](https://i.makeagif.com/media/10-14-2021/EJNQTS.gif)" />
+Moreover, this program includes a model trained on the first 80% of the market data to predict the volatility in the remaining 20%, judging by the pictures above, it's not great not terrible.
 
 
 # Why did I do this?
