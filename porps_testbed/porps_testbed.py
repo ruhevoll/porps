@@ -111,7 +111,35 @@ class Portfolio:
 
 
     def predict_volatility(self):
-        return 0;
-       
+        # Computes rolling volatility, and predicts future volatility (wouldn't ship this, this is just a first pass at trying this)
+        # USING TEST-SET VALIDATION (see ISLP 5.1) w/ first 80% training data and 20% test data
+        self.df['vol_prtf'] = self.df[['dyret_aapl', 'dyret_sbux', 'dyret_msft']].rolling(window = 21).std() * np.sqrt(152) # Rolling standard deviation in 21-day window
+        self.df['vol_prtf'].dropna()
 
+        # Lagged returns & lagged vol. to predict volatility
+        self.df['lag_aapl'] = self.df['dyret_aapl'].shift(1)
+        self.df['lag_sbux'] = self.df['dyret_sbux'].shift(1)
+        self.df['lag_msft'] = self.df['dyret_msft'].shift(1)
+        self.df['lag_vol'] = self.df['vol_prtf'].shift(1)
+
+        features = self.df[['lag_aapl', 'lag_sbux', 'lag_msft']]
+        data = self.df[['vol_prtf', 'dyret_aapl', 'dyret_sbux', 'dyret_msft']].dropna()
+       
+        training_size = int(0.8*len(data))
+        X_train = data.iloc[:training_size][['lag_aapl', 'lag_sbux', 'lag_msft']] #iloc is integer location, selects specific entries up to the training size
+        Y_train = data.iloc[:training_size]['port_vol']
+        X_test = data.iloc[training_size:][['lag_aapl', 'lag_sbux', 'lag_msft']]
+        Y_test = data.iloc[training_size:]['port_vol']
+
+        # Training process, ft. feature scaling
+
+        scalar = StandardScaler()
+        X_train_scaled = scalar.fit_transform(X_train)
+        X_test_scaled = scalar.transform(X_test)
+
+        model = LinearRegression()
+        model.fit(X_train_scaled, Y_train)
+        Y_pred = model.predict(X_test_scaled)
+
+        return {'predicted' : Y_pred, 'actual' : Y_test, 'dates' : self.dates}
 
