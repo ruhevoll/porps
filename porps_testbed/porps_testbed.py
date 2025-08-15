@@ -77,7 +77,7 @@ class Portfolio:
     def optimize_portfolio(self, target_return = None):
 
         n = len(self.mean_returns) # Number of stocks, doing it this way allows for scalability later!
-        w_start = np.ones(n)/n # Starting guess [1, 1, 1, ..., 1]
+        w_start = np.ones(n)/n # Starting guess, vector that sums to 1
         bounds = tuple((-1, 1) for _ in range(n)) # Bounds on portfolio weights
         main_constraint = {'type' : 'eq', 'fun': lambda w: np.sum(w) - 1} # The type of contraint is equality where the sum of weights must equal zero
         
@@ -96,10 +96,20 @@ class Portfolio:
             raise ValueError(result.message)
 
     def generate_portfolios(self, num_portfolios = 1000):
+        # Generate portfolios and store their metrics in a dictionary
+
         n = len(self.mean_returns)
-        np.random.dirichlet(np.ones(n), num_portfolios)
-        return 0;
-        
+        weights = np.random.dirichlet(np.ones(n), num_portfolios) # Generate n weights for num_portfolios number of portfolios, [[0.2, 0.4, 0.4], [0.3, 0.3, 0.4], ...] etc.
+        portfolios = {}
+
+        # Here, we iterate over the portfolios and store their metrics in a dictionary
+
+        for idx in range(0, num_portfolios):
+            self.portfolio_metrics(weights[idx], store = True, ptfrid = f'port{idx}')
+            portfolios[f'port{idx}'] = self.portfolio_metrics(weights[idx], store = True, ptfrid = f'port{idx}')
+        return portfolios
+
+
     def predict_volatility(self):
         return 0;
        
