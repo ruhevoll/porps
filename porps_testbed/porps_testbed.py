@@ -44,10 +44,11 @@ class Portfolio:
 
         # Instance attributes
         self.df = self.df.dropna()
-        self.mean_returns = self.df[['dyret_aapl', 'dyret_sbux', 'dyret_msft']].mean()*152
+        self.mean_returns = self.df[['dyret_aapl', 'dyret_sbux', 'dyret_msft']].mean()*np.sqrt(152)
         self.cov_matrix = self.df[['dyret_aapl', 'dyret_sbux', 'dyret_msft']].cov() * 152
         self.risk_free_rate = i*152
-
+        print("Mean Returns:", self.mean_returns)
+        print("Cov Matrix:", self.cov_matrix)
     def portfolio_metrics(self, weights, *args, **kwargs):
     # This function evaluates portfolio performance for a set of weights
     # Supported metrics are return, volatility, and the Sharpe Ratio
@@ -57,7 +58,7 @@ class Portfolio:
         store = kwargs.get('store', False)                                          # If false, return single metric
         prtfid = kwargs.get('prtfid', None)                                        # Assign an ID to the portfolio 
 
-        annret_prtf = np.sum(weights * self.mean_returns)                           # Annualized portfolio return
+        annret_prtf = np.sum(weights * self.mean_returns * np.sqrt(152))                           # Annualized portfolio return
         annvol_prtf = np.sqrt(np.dot(weights.T, np.dot(self.cov_matrix, weights)))  # Annualized portfolio volatility
         sharpe = (annret_prtf - risk_free_rate)/annvol_prtf                         # Portfolio Sharpe ratio
 
@@ -81,7 +82,7 @@ class Portfolio:
 
         n = len(self.mean_returns) # Number of stocks, doing it this way allows for scalability later!
         w_start = np.ones(n)/n # Starting guess, vector that sums to 1
-        bounds = tuple((-1, 1) for _ in range(n)) # Bounds on portfolio weights
+        bounds = tuple((0, 1) for _ in range(n)) # Bounds on portfolio weights
         main_constraint = {'type' : 'eq', 'fun': lambda w: np.sum(w) - 1} # The type of contraint is equality where the sum of weights must equal zero
         
 
@@ -104,7 +105,8 @@ class Portfolio:
         n = len(self.mean_returns)
         weights = np.random.dirichlet(np.ones(n), num_portfolios) # Generate n weights for num_portfolios number of portfolios, [[0.2, 0.4, 0.4], [0.3, 0.3, 0.4], ...] etc.
         portfolios = {}
-
+        print('Weights: \n')
+        print(weights)
         # Here, we iterate over the portfolios and store their metrics in a dictionary
 
         for idx in range(0, num_portfolios):
@@ -177,7 +179,7 @@ class Portfolio:
 
 
 portfolio = Portfolio()
-portfolios = portfolio.generate_portfolios(10000)
+portfolios = portfolio.generate_portfolios(1000)
 opt_result = portfolio.optimize_portfolio()
 vol_results = portfolio.predict_volatility()
 portfolio.plot_results(portfolios)
