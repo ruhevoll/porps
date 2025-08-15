@@ -1,7 +1,8 @@
 # Portfolio Optimization and Risk Prediction System (PORPS)
 
 <img width="986" height="579" alt="image" src="https://github.com/user-attachments/assets/2dedf997-412b-405a-a44e-3d58f873aa07" />
-<img width="986" height="579" alt="image" src="https://github.com/user-attachments/assets/ec4410f7-988f-4a57-a869-8b92f8ab0519" />
+<img width="994" height="586" alt="image" src="https://github.com/user-attachments/assets/60b4d92c-b9d1-4735-8d3f-babe1039e636" />
+
 
 ## What is this code?
 This code uses 152 days of market data from Apple, Starbucks, and Microsoft to compute the optimal portfolio weights for a portfolio including these 3 companies. 
