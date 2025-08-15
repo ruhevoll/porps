@@ -56,3 +56,4 @@ def portfolio_metrics(weights, *args, **kwargs):
     # This function evaluates portfolio performance for a set of weights
     # Supported metrics are return, volatility, and the Sharpe Ratio
     # Stores results in a dictionary for the efficient frontier calculation
+    return 0
