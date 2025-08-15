@@ -3,9 +3,11 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
 from scipy.optimize import minimize
 from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import StandardScaler
+
 
 i = 0.0002      # Daily risk-free rate
 
@@ -32,6 +34,7 @@ class Portfolio:
 
         data = {'Date' : dates, 'AAPL' : close_aapl, 'SBUX' : close_sbux, 'MSFT' : close_msft}
         self.df = pd.DataFrame(data)
+        self.df['Date'] = pd.to_datetime(self.df['Date'])
         print(self.df['AAPL'])
         # Daily returns
          
@@ -52,7 +55,7 @@ class Portfolio:
         
         risk_free_rate = kwargs.get('risk_free_rate', self.risk_free_rate)
         store = kwargs.get('store', False)                                          # If false, return single metric
-        ptfr_id = kwargs.get('ptfrid', None)                                        # Assign an ID to the portfolio 
+        prtfid = kwargs.get('prtfid', None)                                        # Assign an ID to the portfolio 
 
         annret_prtf = np.sum(weights * self.mean_returns)                           # Annualized portfolio return
         annvol_prtf = np.sqrt(np.dot(weights.T, np.dot(self.cov_matrix, weights)))  # Annualized portfolio volatility
@@ -63,7 +66,7 @@ class Portfolio:
 
     # If True is passed in **kwargs when calling the function, the entire dictionary of metrics is returned
         if store == True:
-            return {'ptfrid': ptfr_id if ptfr_id is not None else 'default', 'return': annret_prtf, 'volatility': annvol_prtf, 'sharpe': sharpe}
+            return {'prtfid': prtfid if prtfid is not None else 'default', 'return': annret_prtf, 'volatility': annvol_prtf, 'sharpe': sharpe}
         elif store == False:
             if metric == 'return':
                 return annret_prtf
@@ -87,7 +90,7 @@ class Portfolio:
             result = minimize(lambda w: -self.portfolio_metrics(w, 'sharpe'), w_start, method = 'SLSQP', bounds = bounds, constraints = [main_constraint])
         else:
             return_constraint =  {'type' : 'eq', 'fun' : lambda w: self.portfolio_metrics(w, 'return') - target_return}
-            result = minimize(lambda w: -self.portfolio_metrics(w, 'volatility'), w_start, method = 'SLSQP', bounds = bounds, constraints = [main_constraint, return_constraint])
+            result = minimize(lambda w: self.portfolio_metrics(w, 'volatility'), w_start, method = 'SLSQP', bounds = bounds, constraints = [main_constraint, return_constraint])
             
     # Check if optimization succeeded 
         if result.success:
@@ -105,41 +108,76 @@ class Portfolio:
         # Here, we iterate over the portfolios and store their metrics in a dictionary
 
         for idx in range(0, num_portfolios):
-            self.portfolio_metrics(weights[idx], store = True, ptfrid = f'port{idx}')
-            portfolios[f'port{idx}'] = self.portfolio_metrics(weights[idx], store = True, ptfrid = f'port{idx}')
+            portfolios[f'port{idx}'] = self.portfolio_metrics(weights[idx], store = True, prtfid = f'port{idx}')
         return portfolios
 
 
     def predict_volatility(self):
         # Computes rolling volatility, and predicts future volatility (wouldn't ship this, this is just a first pass at trying this)
         # USING TEST-SET VALIDATION (see ISLP 5.1) w/ first 80% training data and 20% test data
-        self.df['vol_prtf'] = self.df[['dyret_aapl', 'dyret_sbux', 'dyret_msft']].rolling(window = 21).std() * np.sqrt(152) # Rolling standard deviation in 21-day window
-        self.df['vol_prtf'].dropna()
+        self.df['ret_prtf'] = (self.df[['dyret_aapl', 'dyret_sbux', 'dyret_msft']] * [1/3, 1/3, 1/3]).sum(axis=1)
+        self.df['vol_prtf'] = self.df['ret_prtf'].rolling(window = 21).std() * np.sqrt(152) # Rolling standard deviation in 21-day window
 
         # Lagged returns & lagged vol. to predict volatility
         self.df['lag_aapl'] = self.df['dyret_aapl'].shift(1)
         self.df['lag_sbux'] = self.df['dyret_sbux'].shift(1)
         self.df['lag_msft'] = self.df['dyret_msft'].shift(1)
         self.df['lag_vol'] = self.df['vol_prtf'].shift(1)
-
-        features = self.df[['lag_aapl', 'lag_sbux', 'lag_msft']]
-        data = self.df[['vol_prtf', 'dyret_aapl', 'dyret_sbux', 'dyret_msft']].dropna()
+        data = self.df[['Date', 'vol_prtf', 'lag_aapl', 'lag_sbux', 'lag_msft', 'lag_vol']].dropna()
        
         training_size = int(0.8*len(data))
-        X_train = data.iloc[:training_size][['lag_aapl', 'lag_sbux', 'lag_msft']] #iloc is integer location, selects specific entries up to the training size
-        Y_train = data.iloc[:training_size]['port_vol']
-        X_test = data.iloc[training_size:][['lag_aapl', 'lag_sbux', 'lag_msft']]
-        Y_test = data.iloc[training_size:]['port_vol']
+        X_train = data.iloc[:training_size][['lag_aapl', 'lag_sbux', 'lag_msft', 'lag_vol']] #iloc is integer location, selects specific entries up to the training size
+        Y_train = data.iloc[:training_size]['vol_prtf']
+        X_test = data.iloc[training_size:][['lag_aapl', 'lag_sbux', 'lag_msft', 'lag_vol']]
+        Y_test = data.iloc[training_size:]['vol_prtf']
 
         # Training process, ft. feature scaling
 
         scalar = StandardScaler()
         X_train_scaled = scalar.fit_transform(X_train)
         X_test_scaled = scalar.transform(X_test)
-
         model = LinearRegression()
         model.fit(X_train_scaled, Y_train)
         Y_pred = model.predict(X_test_scaled)
 
-        return {'predicted' : Y_pred, 'actual' : Y_test, 'dates' : self.dates}
+        return {'predicted' : Y_pred, 'actual' : Y_test, 'dates' : data.iloc[training_size:]['Date']}
 
+    def plot_results(self, prtf_metrics_dict):
+        
+        # Efficient frontier plot
+        plt.figure(figsize=(10, 6))
+        returns = [prtf_metrics_dict[key]['return'] for key in prtf_metrics_dict]
+        volatilities = [prtf_metrics_dict[key]['volatility'] for key in prtf_metrics_dict]
+        plt.scatter(volatilities, returns, c='blue', alpha=0.5, label='Portfolios')
+        opt_result = self.optimize_portfolio()['portfolio metrics']
+        plt.scatter(opt_result['volatility'], opt_result['return'], c='red', marker='*', s=200, label='Optimal Portfolio')
+        plt.xlabel('Annualized Volatility')
+        plt.ylabel('Annualized Return')
+        plt.title('Efficient Frontier')
+        plt.legend()
+        plt.tight_layout()
+        plt.show()
+
+        # Volatility prediction plot
+        plt.figure(figsize=(10, 6))
+        vol_results = self.predict_volatility()
+        predicted = vol_results['predicted']
+        actual = vol_results['actual']
+        dates = pd.to_datetime(vol_results['dates'])
+        plt.plot(dates, predicted, label='Predicted Volatility', color='blue')
+        plt.plot(dates, actual, label='Actual Volatility', color='red', linestyle='--')
+        plt.xlabel('Date')
+        plt.ylabel('Annualized Volatility')
+        plt.title('Predicted vs. Actual Portfolio Volatility')
+        plt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m-%d'))
+        plt.xticks(rotation=45)
+        plt.legend()
+        plt.tight_layout()
+        plt.show()
+
+
+portfolio = Portfolio()
+portfolios = portfolio.generate_portfolios(10000)
+opt_result = portfolio.optimize_portfolio()
+vol_results = portfolio.predict_volatility()
+portfolio.plot_results(portfolios)
