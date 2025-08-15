@@ -14,4 +14,4 @@ Moreover, this program includes a model trained on the first 80% of the market d
 The purpose of this project is for my personal review of Python, the pandas/numpy/matplotlib libraries, and to help me learn how to implement machine learning in Python via scikit-learn. 
 
 ## Future work
-I'd like to make this code more universal, so you can dynamically add stocks and consider a risk-free account as a part of your portfolio. Right now, values are somewhat hard coded for AAPL, SBUX, and MSFT, and it's also hard coded for a trading period of 152 days. Also, some more detailed documentation explaining the mathematics behind this code. 
+I'd like to make this code more universal, so you can dynamically add stocks and consider a risk-free account as a part of your portfolio. Right now, values are somewhat hard coded for AAPL, SBUX, and MSFT, and it's also hard coded for a trading period of 152 days. Also, would like to put in some more detailed documentation explaining the mathematics behind this code, and consider an aspect that has an element of computation happening on the GPU. 
