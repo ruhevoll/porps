@@ -121,3 +121,334 @@ show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
 show "Average:", (string avg t.Close)
 show "Min: ", (string min t.Close)
 show "Max: ", (string max t.Close)
+show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)show "Closing price statistics for Apple:"
+show "Average:", (string avg t.Close)
+show "Min: ", (string min t.Close)
+show "Max: ", (string max t.Close)
