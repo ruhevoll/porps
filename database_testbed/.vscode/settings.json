@@ -1,0 +1,6 @@
+{
+    "kdb.connectionMap": {
+        "1.q": "REPL"
+    },
+    "kdb.targetMap": {}
+}
