@@ -9,6 +9,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import StandardScaler
 
 
+
 i = 0.0002      # Daily risk-free rate
 
 class Portfolio:
@@ -177,10 +178,3 @@ class Portfolio:
         plt.legend()
         plt.tight_layout()
         plt.show()
-
-
-portfolio = Portfolio()
-portfolios = portfolio.generate_portfolios(1000)
-opt_result = portfolio.optimize_portfolio()
-vol_results = portfolio.predict_volatility()
-portfolio.plot_results(portfolios)
